@@ -47,7 +47,7 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a href="javascript:void(0);" id="loginButton">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -102,14 +102,14 @@
                     <img src="img/logo.png" alt="logo" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a class="btn btn-block bg-warning" data-target="#reserveform" data-toggle="modal">Reserve Table</a>
+                    <a class="btn btn-block bg-warning" href="javascript:void(0);" id="reserveFormButton">Reserve Table</a>
                      <!-- data-toggle="tooltip" data-html="true" title="Or call us at <br><strong>+91 1234567890</strong>" data-placement="bottom" -->
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="modal fade" id="reserveform" role="dialog">
+    <div class="modal fade" id="reserveFormModal" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
@@ -308,6 +308,12 @@
                     $('#carouselButton').children('span').removeClass('fa-play');
                     $('#carouselButton').children('span').addClass('fa-pause');
                 }
+            });
+            $('#loginButton').click(function(){
+                $('#loginModal').modal();
+            });
+            $('#reserveFormButton').click(function(){
+                $('#reserveFormModal').modal('show');
             });
         });
     </script>
